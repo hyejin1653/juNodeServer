@@ -1,0 +1,39 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "bin": {
+    "app": "./app.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pkg . --target node12-win-x64",
+    "proto": "pbjs -t json-module -w commonjs -o src/proto/proto.js  src/proto/*.proto"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "buffer-to-arraybuffer": "0.0.6",
+    "build": "^0.1.4",
+    "cors": "^2.8.5",
+    "dgram": "^1.0.1",
+    "express": "^4.17.2",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "is-rtp": "^2.0.0",
+    "mysql": "^2.18.1",
+    "node-geometry-library": "^1.2.6",
+    "ol": "^6.13.0",
+    "ol-proj": "^1.1.0",
+    "pcap-parser": "^0.2.1",
+    "pcap2wav": "^0.4.0",
+    "pcm-player": "0.0.11",
+    "pkg": "^5.5.2",
+    "point-in-polygon": "^1.1.0",
+    "protobufjs": "^6.11.2",
+    "ws": "^8.4.0"
+  }
+}

@@ -1,0 +1,265 @@
+package backend;
+syntax = "proto3";
+
+/*통계 침로침수 start*/
+message TotalHeader{
+    float SOG = 1;
+    float COG = 2;
+    int64 CNT = 3;
+}
+
+message TotalDetail{
+    float COG = 1;
+    float SOG = 2;
+}
+
+message TotalData{
+    repeated TotalHeader  TotalHResult = 1;
+    repeated TotalDetail  TotalDResult = 2;
+}
+/*통계 침로침수 end*/
+
+/*정박현황 start*/
+message StayAvg{
+    string MMSI = 1;
+    string VESSELNAME = 2;
+    string START_DT = 3;
+    string END_DT = 4;
+    string STAY_DT = 5;
+}
+
+message StayData{
+    repeated StayAvg  StayResult = 1;
+}
+/*정박현황 end*/
+
+
+/*구역 선박목록 start*/
+message AroundAvg{
+    string AREA_NM = 1;
+    string MMSI = 2;
+    string VESSELNAME = 3;
+    string SHIPTYPENM = 4;
+    string MSG_NM = 5;
+    string FLG = 6;
+}
+
+message AroundData{
+    repeated AroundAvg  AroundResult = 1;
+}
+/*구역 선박목록 end*/
+
+/*구역 항적정보 start*/
+message AroundAllAvg{
+    string MMSI = 1;
+    string VESSELNAME = 2;
+    string INSERT_DT = 3;
+    string SHIPTYPE = 4;
+    string SHIPTYPENM = 5;
+    string MESSAGETYPE = 6;
+    string MSG_NM = 7;
+    string FLG = 8;
+    float LONGITUDE = 9;
+    float LATITUDE = 10;
+    string AREA_NM = 11;
+}
+message AroundAllData{
+    repeated AroundAllAvg  AroundAllResult = 1;
+}
+/*구역 항적정보 end*/
+
+
+/*구역 선종별목록 start*/
+message AroundShipType{
+    string AREA_NM = 1;
+    string YYMM = 2;
+    int32 H01 = 3;
+    int32 H02 = 4;
+    int32 H03 = 5;
+    int32 H04 = 6;
+    int32 H05 = 7;
+    int32 H06 = 8;
+    int32 H07 = 9;
+    int32 H08 = 10;
+    int32 H09 = 11;
+    int32 H10 = 12;
+    int32 H11 = 13;
+    int32 H12 = 14;
+    int32 H13 = 15;
+    int32 H14 = 16;
+    int32 H15 = 17;
+    int32 H16 = 18;
+    int32 H17 = 19;
+    int32 H18 = 20;
+    int32 H19 = 21;
+    int32 H20 = 22;
+    int32 H21 = 23;
+    int32 H22 = 24;
+    int32 H23 = 25;
+    int32 H24 = 26;
+    int32 H25 = 27;
+    int32 TOT_SUM = 28;
+}
+
+message AroundShipTypeData{
+    repeated AroundShipType  AroundShipTypeResult = 1;
+}
+/*구역 선종별목록 end*/
+
+/*구역 시간별목록 start*/
+message AroundTime{
+    string AREA_NM = 1;
+    string INSERT_DT = 2;
+    int32 H01 = 3;
+    int32 H02 = 4;
+    int32 H03 = 5;
+    int32 H04 = 6;
+    int32 H05 = 7;
+    int32 H06 = 8;
+    int32 H07 = 9;
+    int32 H08 = 10;
+    int32 H09 = 11;
+    int32 H10 = 12;
+    int32 H11 = 13;
+    int32 H12 = 14;
+    int32 H13 = 15;
+    int32 H14 = 16;
+    int32 H15 = 17;
+    int32 H16 = 18;
+    int32 H17 = 19;
+    int32 H18 = 20;
+    int32 H19 = 21;
+    int32 H20 = 22;
+    int32 H21 = 23;
+    int32 H22 = 24;
+    int32 H23 = 25;
+    int32 H24 = 26;
+    int32 H25 = 27;
+    int32 TOT_SUM = 28;
+}
+
+message AroundTimeData{
+    repeated AroundTime  AroundTimeResult = 1;
+}
+/*구역 선종별목록 end*/
+
+
+/*구역 클래스별목록 start*/
+message AroundClass{
+    string AREA_NM = 1;
+    string YY = 2;
+    string CLASS_NM = 3;
+    int32 CLASS_CNT = 4;
+}
+
+message AroundClassData{
+    repeated AroundClass  AroundClassResult = 1;
+}
+/*구역 클래스별목록 end*/
+
+
+/*진입이탈 start*/
+message InoutAvg{
+    string MMSI = 1;
+    string VESSELNAME = 2;
+    string IO_TYPE = 3;
+    string INSERT_DT = 4;
+    string SHIPTYPENM = 5;
+    string MSG_NM = 6;
+    string FLG = 7;
+    string AREA_NM = 8;
+}
+
+message InoutAvgData{
+    repeated InoutAvg  InoutResult = 1;
+}
+/*진입이탈 end*/
+
+
+/*진입이탈 선종별목록 start*/
+message InoutShipType{
+    string AREA_NM = 1;
+    string YYMM = 2;
+    int32 H01 = 3;
+    int32 H02 = 4;
+    int32 H03 = 5;
+    int32 H04 = 6;
+    int32 H05 = 7;
+    int32 H06 = 8;
+    int32 H07 = 9;
+    int32 H08 = 10;
+    int32 H09 = 11;
+    int32 H10 = 12;
+    int32 H11 = 13;
+    int32 H12 = 14;
+    int32 H13 = 15;
+    int32 H14 = 16;
+    int32 H15 = 17;
+    int32 H16 = 18;
+    int32 H17 = 19;
+    int32 H18 = 20;
+    int32 H19 = 21;
+    int32 H20 = 22;
+    int32 H21 = 23;
+    int32 H22 = 24;
+    int32 H23 = 25;
+    int32 H24 = 26;
+    int32 H25 = 27;
+    int32 TOT_SUM = 28;
+}
+
+message InoutShipTypeData{
+    repeated InoutShipType  InoutShipTypeResult = 1;
+}
+/*진입이탈 선종별목록 end*/
+
+
+/*진입이탈 시간별목록 start*/
+message InoutTime{
+    string AREA_NM = 1;
+    string INSERT_DT = 2;
+    int32 H01 = 3;
+    int32 H02 = 4;
+    int32 H03 = 5;
+    int32 H04 = 6;
+    int32 H05 = 7;
+    int32 H06 = 8;
+    int32 H07 = 9;
+    int32 H08 = 10;
+    int32 H09 = 11;
+    int32 H10 = 12;
+    int32 H11 = 13;
+    int32 H12 = 14;
+    int32 H13 = 15;
+    int32 H14 = 16;
+    int32 H15 = 17;
+    int32 H16 = 18;
+    int32 H17 = 19;
+    int32 H18 = 20;
+    int32 H19 = 21;
+    int32 H20 = 22;
+    int32 H21 = 23;
+    int32 H22 = 24;
+    int32 H23 = 25;
+    int32 H24 = 26;
+    int32 TOT_SUM = 27;
+}
+
+message InoutTimeData{
+    repeated InoutTime  InoutTimeResult = 1;
+}
+/*진입이탈 선종별목록 end*/
+
+
+/*구역 클래스별목록 start*/
+message InoutClass{
+    string AREA_NM = 1;
+    string YY = 2;
+    string CLASS_NM = 3;
+    int32 CLASS_CNT = 4;
+}
+
+message InoutClassData{
+    repeated InoutClass  InoutClassResult = 1;
+}
+/*구역 클래스별목록 end*/
